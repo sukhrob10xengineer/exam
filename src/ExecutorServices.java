@@ -1,3 +1,9 @@
+import src.Reminder;
+
+import java.util.Date;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+
 //todo - Create a program that simulates a simple reminder application.
 // The program should allow users to schedule reminders for specific tasks
 // at designated times
@@ -14,4 +20,58 @@
 //        Mark a reminder as completed by specifying the task description.
 public class ExecutorServices {
 
-}
+        private String task;
+        private Date time;
+        private boolean completed;
+
+        public void Reminder(String task, Date time) {
+            this.task = task;
+            this.time = time;
+            this.completed = false;
+        }
+
+        public String getTask() {
+            return task;
+        }
+
+        public Date getTime() {
+            return time;
+        }
+
+        public boolean isCompleted() {
+            return completed;
+        }
+
+        public void markAsCompleted() {
+            completed = true;
+        }
+    }
+
+    class ReminderScheduler {
+        private ScheduledThreadPoolExecutor executor;
+
+        public ReminderScheduler() {
+            executor = new ScheduledThreadPoolExecutor(1);
+        }
+
+        public void scheduleReminder(Reminder reminder) {
+            long delay = reminder.getTime().getTime() - System.currentTimeMillis();
+            if (delay > 0) {
+                executor.schedule(() -> {
+                    System.out.println("Reminder: " + reminder.getTask() + " is due now!");
+                }, delay, TimeUnit.MILLISECONDS);
+            }
+        }
+
+        public void cancelReminder(Reminder reminder) {
+            // Implementation to cancel reminder
+        }
+
+        public void markReminderAsCompleted(Reminder reminder) {
+            reminder.markAsCompleted();
+            System.out.println("Reminder: " + reminder.getTask() + " marked as completed.");
+        }
+    }
+
+
+
