@@ -4,3 +4,62 @@
     - Thread Executors turlarini yozing.
     - Serialization bilan Deserializationning nima ?
     - Log levellarni yozing.
+
+
+1.
+    Java tilidagi ip - bu dastur bajarilayotganda olinadigan yo'nalish yoki yo'l. Umuman olganda,
+    barcha dasturlarda dasturning boshlanishida JVM yoki
+    Java Virtual Machine tomonidan taqdim etiladigan asosiy oqim deb nomlanuvchi kamida bitta ip mavjud.
+
+
+
+
+
+2.
+    Java'dagi Daemon ishi - axlat yig'ish, yakunlovchi, Harakat tinglovchilari,
+    Signal jo'natmalari va boshqalar kabi fon operatsiyalarini bajaradigan past ustuvor ish zarrachasi.
+    Java'dagi Daemon ipi ham foydalanuvchi ipiga yordam beruvchi xizmat ko'rsatuvchi provayder ipidir.
+
+
+
+
+3.
+    Fixed Size Thread Pool Executor ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(10);
+
+    Cached Thread Pool Executor ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newCachedThreadPool();
+
+    Scheduled Thread Pool Executor ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newScheduledThreadPool(10);
+
+    Single Thread Pool Executor ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newSingleThreadExecutor();
+
+    Work Stealing Thread Pool Executor ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newWorkStealingPool(4);
+
+
+
+
+
+4.
+    Seriyalashtirish - ob'ekt holatini bayt oqimiga aylantirish mexanizmi.
+    Deserializatsiya - bu teskari jarayon bo'lib, bayt oqimi xotirada haqiqiy Java ob'ektini qayta yaratish uchun ishlatiladi.
+    Ushbu mexanizm ob'ektni saqlab qolish uchun ishlatiladi. Yaratilgan bayt oqimi platformadan mustaqil.
+
+
+
+
+5.
+
+    OFF - ro'yxatga olish yo'q
+    FATAL - Ilovadan foydalanish mumkin emas. Darhol choralar ko'rish kerak
+    ERROR - ilovada xatolik yuz berdi
+    OGOHLANTIRISH - Kutilmagan narsa - garchi xato bo'lmasa ham - yuz berdi va uni kuzatish kerak
+    INFO - Oddiy, kutilgan, tegishli voqea sodir bo'ldi.
+    DEBUG - disk raskadrovka maqsadlarida foydalaniladi
+    TRACE - disk raskadrovka maqsadlarida foydalaniladi - eng batafsil ma'lumotlarni o'z ichiga oladi
+
+
+
+
+
+
+
+
